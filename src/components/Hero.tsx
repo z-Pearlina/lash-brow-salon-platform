@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
 import { scrollTo } from "@/lib/scrollTo";
 
+const easing = [0.22, 1, 0.36, 1] as const;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: (delay: number) => ({
@@ -12,7 +14,7 @@ const fadeUp = {
     transition: {
       duration: 0.8,
       delay: 3.6 + delay,
-      ease: [0.22, 1, 0.36, 1],
+      ease: easing,
     },
   }),
 };
@@ -26,7 +28,7 @@ const imageReveal = {
     transition: {
       duration: 1.0,
       delay: 3.4,
-      ease: [0.22, 1, 0.36, 1],
+      ease: easing,
     },
   },
 };
